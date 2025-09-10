@@ -24,6 +24,7 @@ type Key {
   Variant(Variant)
   Disabled(Bool)
   ThreeLayerKey(ThreeLayer)
+  Double(Variant, Size)
 }
 
 pub fn test_1_test() {
@@ -69,4 +70,17 @@ pub fn test_9_test() {
       ThreeLayerKey(ThreeLayer(Primary)),
     )
     == True
+}
+
+pub fn test_10_test() {
+  assert is_same_kind(Double(Primary, Medium), Double(Secondary, Small)) == True
+}
+
+pub fn test_11_test() {
+  assert is_same_kind(Double(Primary, Medium), Double(Secondary, Medium))
+    == True
+}
+
+pub fn test_12_test() {
+  assert is_same_kind(Variant(Primary), Double(Secondary, Medium)) == False
 }
