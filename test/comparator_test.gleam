@@ -15,11 +15,15 @@ type Variant {
   Secondary
 }
 
-// Define a master Key type for all Variants
+type ThreeLayer {
+  ThreeLayer(Variant)
+}
+
 type Key {
   Size(Size)
   Variant(Variant)
   Disabled(Bool)
+  ThreeLayerKey(ThreeLayer)
 }
 
 pub fn test_1_test() {
@@ -44,4 +48,25 @@ pub fn test_5_test() {
 
 pub fn test_6_test() {
   assert is_same_kind(Disabled(True), Disabled(False)) == True
+}
+
+pub fn test_7_test() {
+  assert is_same_kind(ThreeLayerKey(ThreeLayer(Primary)), Disabled(False))
+    == False
+}
+
+pub fn test_8_test() {
+  assert is_same_kind(
+      ThreeLayerKey(ThreeLayer(Primary)),
+      ThreeLayerKey(ThreeLayer(Secondary)),
+    )
+    == True
+}
+
+pub fn test_9_test() {
+  assert is_same_kind(
+      ThreeLayerKey(ThreeLayer(Primary)),
+      ThreeLayerKey(ThreeLayer(Primary)),
+    )
+    == True
 }
