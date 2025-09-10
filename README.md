@@ -28,10 +28,10 @@ type Key {
 }
 
 pub fn main() -> Nil {
-  assert is_same_kind(Size(Medium), Size(Small), True) == True
-  assert is_same_kind(Size(Medium), Variant(Primary), False) == False
-  assert is_same_kind(Variant(Primary), Variant(Primary), False) == True
-  assert is_same_kind(Variant(Primary), Variant(Secondary), False) == True
+  assert is_same_kind(Size(Medium), Size(Small)) == True
+  assert is_same_kind(Size(Medium), Variant(Primary)) == False
+  assert is_same_kind(Variant(Primary), Variant(Primary)) == True
+  assert is_same_kind(Variant(Primary), Variant(Secondary)) == True
 }
 ```
 
