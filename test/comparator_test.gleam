@@ -10,6 +10,11 @@ type Size {
   Medium
 }
 
+type Value {
+  A
+  B
+}
+
 type Variant {
   Primary
   Secondary
@@ -83,4 +88,20 @@ pub fn test_11_test() {
 
 pub fn test_12_test() {
   assert is_same_kind(Variant(Primary), Double(Secondary, Medium)) == False
+}
+
+pub fn test_13_test() {
+  assert is_same_kind(A, B) == False
+}
+
+pub fn test_14_test() {
+  assert is_same_kind(A, A) == True
+}
+
+pub fn test_15_test() {
+  assert is_same_kind(B, A) == False
+}
+
+pub fn test_16_test() {
+  assert is_same_kind(B, B) == True
 }

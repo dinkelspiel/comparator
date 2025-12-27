@@ -1,6 +1,6 @@
 name = "comparator"
 description = "Compare if two types have the same constructor in Gleam"
-version = "1.0.2"
+version = "1.0.3"
 licences = ["Apache-2.0"]
 repository = { type = "github", user = "dinkelspiel", repo = "comparator" }
 
